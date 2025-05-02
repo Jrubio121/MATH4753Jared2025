@@ -1,0 +1,58 @@
+---
+title: "What the package does"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{What the package does}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MATH4753Jared2025)
+```
+
+# Introduction
+This package is designed to store and organize various functions I learned throughout the course MATH 4753. It is a collection of useful tools and methods I encountered during the course. The goal is to provide efficient solutions to problems and exercises. Each function is well documented and tested. Users can easily apply these functions in similar mathematical contexts. This package serves as both a personal reference and a resource for others working on similar problems in the course.
+
+## The first function
+
+This function simulates a binomial distribution by running multiple iterations of trials, each trial having a fixed number of trials (n) and a success probability (p). It computes the number of successes in each iteration and generates a bar plot of the proportion of successes across all iterations.
+
+Here’s an example of how to use this function:
+```{r}
+MATH4753Jared2025::mybinomial(iter = 100, n = 10, p = 0.5)
+```
+
+## The second function
+
+This function helps determine the optimal number of tickets to sell for a given event based on factors like the total number of seats (N), the probability of a passenger showing up (p), and an acceptable probability of overbooking (gamma). It provides both a discrete and a continuous case analysis, where the objective is to minimize overbooking while ensuring enough tickets are sold.
+
+Here’s an example of how to use this function:
+```{r}
+MATH4753Jared2025::ntickets(N = 400, gamma = 0.02, p = 0.95)
+```
+
+## The third function
+
+The myboot2 function performs a bootstrap resampling procedure to estimate a confidence interval for a statistical measure (e.g., mean). It resamples the data iter times, calculates the desired statistic for each resample, and then computes the confidence interval. The function also generates a histogram of the bootstrap statistics, with a vertical line showing the point estimate and lines marking the confidence interval.
+
+Here’s an example of how to use this function:
+```{r}
+MATH4753Jared2025::myboot2(iter = 10000, x = 5, alpha = 0.05, fun = "mean", xlab = "Bootstrapped Means")
+```
+
+## The fourth function
+
+This function generates a histogram of sample means derived from a uniform distribution. It demonstrates the Central Limit Theorem (CLT) by showing how the distribution of sample means approaches a normal distribution as the sample size increases.
+
+Here’s an example of how to use this function:
+```{r}
+MATH4753Jared2025::mycltu(n=20,iter=100000)
+```
